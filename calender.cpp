@@ -73,62 +73,76 @@ Month Number	 Name	 Number of Days
 */
 int numberOfDays (int monthNumber, int year) 
 { 
-	// January 
-	if (monthNumber == 0) 
-		return (31); 
+	switch (monthNumber)  {
+	    case 0:
+		// January
+		return (31);
+		break;
 
-	// February 
-	if (monthNumber == 1) 
-	{ 
+	    case 1:
+		// February 
 		// If the year is leap then February has 
 		// 29 days 
-		if (year % 400 == 0 || 
-				(year % 4 == 0 && year % 100 != 0)) 
+		if (year % 400 == 0 || (year % 4 == 0 && year % 100 != 0)) 
 			return (29); 
 		else
-			return (28); 
-	} 
+			return (28);
+		break;
 
-	// March 
-	if (monthNumber == 2) 
+	     case 2:
+		// March
+		return (31);
+		break;
+			
+	     case 3:
+		// April
+		return (30);
+		break;
+			
+	     case 4:
+		// May 
+		return (31);
+		break;
+			
+	     case 5:
+		// June
+		return (30);
+		break;
+			
+	     case 6:
+		// July
+		return (31);
+		break;
+			
+	     case 7:
+		// August
+		return (31);
+		break;
+			
+	     case 8:
+		// September
+		return (30);
+		break;
+			
+	     case 9:
+		// October
 		return (31); 
-
-	// April 
-	if (monthNumber == 3) 
-		return (30); 
-
-	// May 
-	if (monthNumber == 4) 
-		return (31); 
-
-	// June 
-	if (monthNumber == 5) 
-		return (30); 
-
-	// July 
-	if (monthNumber == 6) 
-		return (31); 
-
-	// August 
-	if (monthNumber == 7) 
-		return (31); 
-
-	// September 
-	if (monthNumber == 8) 
-		return (30); 
-
-	// October 
-	if (monthNumber == 9) 
-		return (31); 
-
-	// November 
-	if (monthNumber == 10) 
-		return (30); 
-
-	// December 
-	if (monthNumber == 11) 
-		return (31); 
-} 
+		break;
+			
+	     case 10:
+		// November 
+		return (30);
+		break;
+			
+	     case 11:
+		// December 
+		return (31);
+		break;
+			
+	    default:
+		printf ("Wrong input !");
+	}
+}		 
 
 // Function to print the calendar of the given year 
 void printCalendar(int year) 
